@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>CORRIDA DE CARRO 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="speedfx"></div><div id="flash"></div>
+
+<div id="hud" class="hidden">
+  <div class="hb" id="hPhase"></div>
+  <div class="hb big" id="hPos"></div>
+  <div class="hb" id="hTime"></div>
+  <div class="hb" id="hLives"></div>
+  <div class="hb" id="hSpd"><span id="hSpeed">0</span> KM/H</div>
+  <div id="warn" class="hidden">⚠ FORA DA PISTA</div>
+</div>
+<div id="count" class="hidden"></div>
+
+<div id="menu" class="screen">
+  <h1>CORRIDA DE<br><span>CARRO 3D</span></h1>
+  <button data-go="phases">JOGAR</button>
+  <button data-go="select">ESCOLHER CARRO</button>
+  <button data-go="howto">COMO JOGAR</button>
+</div>
+<div id="phases" class="screen hidden"><h2>ESCOLHA A FASE</h2><div id="phaseList"></div><button data-go="menu">VOLTAR</button></div>
+<div id="select" class="screen hidden"><h2>ESCOLHA SEU CARRO</h2><div id="carList"></div><div id="stats"></div><button data-go="menu">CONFIRMAR</button></div>
+<div id="howto" class="screen hidden">
+  <h2>COMO JOGAR</h2>
+  <p>W / ↑ acelerar &nbsp; S / ↓ frear<br>A / ← esquerda &nbsp; D / → direita<br>ESC pausar</p>
+  <p>No celular use os botões na tela.<br>Desvie dos obstáculos e dos carros: cada batida forte tira 1 vida (são 3).<br>Fora da pista o carro fica muito lento. Chegue o mais à frente possível!</p>
+  <button data-go="menu">VOLTAR</button>
+</div>
+<div id="pause" class="screen hidden"><h2>PAUSADO</h2><button id="bResume">CONTINUAR</button><button data-go="menu">MENU</button></div>
+<div id="end" class="screen hidden"><h2 id="eTitle"></h2><p id="eInfo"></p><div id="eBtns"></div></div>
+
+<div id="touch" class="hidden">
+  <div><button data-k="left">◀</button><button data-k="right">▶</button></div>
+  <div><button data-k="down">FREIO</button><button data-k="up">ACEL.</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
